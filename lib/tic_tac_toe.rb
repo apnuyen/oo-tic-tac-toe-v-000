@@ -37,7 +37,6 @@ class TicTacToe
   end
 
   def turn
-
     puts "Please enter 1-9:"
 
     input = gets.strip
@@ -63,12 +62,13 @@ class TicTacToe
     WIN_COMBINATIONS.detect do |place|
       @board[place[0]] == @board[place[1]] &&
       @board[place[1]] == @board[place[2]] &&
-      position_taken?(place[0]) #review this line
+      position_taken?(place[0]) 
    end
   end
 
   def full?
-    @board.all? do |token| token == "X" || token == "O"
+    @board.all? do 
+      |token| token == "X" || token == "O"
     end
   end
 
@@ -80,7 +80,7 @@ class TicTacToe
     won? || draw? || full?
   end
 
-  def winner #review this method again
+  def winner
     if win_combination = won?
       return @board[win_combination.first]
     end
